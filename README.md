@@ -19,4 +19,6 @@ This project demonstrates an ETL (Extract, Transform, Load) process for airline 
 
 1. Clone this repository:
 
+```sh
 pip install -r requirements.txt
+
