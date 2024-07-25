@@ -1,0 +1,39 @@
+version: '1'
+
+services:
+  database:
+    image: postgres
+    container_name: postgres-db
+    environment:
+      POSTGRES_DB: airline_sentiment_db
+      POSTGRES_USER: dbuser 
+      POSTGRES_PASSWORD: db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-db-data:/var/lib/postgresql/data
+    networks:
+      - post-db-net
+
+  datawerehouse:
+    image: postgres
+    environment:
+      POSTGRES_DB: airline_sentiment_dw
+      POSTGRES_USER: dwuser 
+      POSTGRES_PASSWORD: dw
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-dw-data:/var/lib/postgresql/data
+    networks:
+      - post-dw-net
+
+volumes:
+  postgres-db-data:
+  postgres-dw-data:
+
+networks:
+  post-db-net:
+    driver: bridge
+  post-dw-net:
+    driver: bridge

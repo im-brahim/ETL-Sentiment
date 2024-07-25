@@ -1,0 +1,23 @@
+# Ignore PostgreSQL data
+postgres-db-data
+postgres-dw-data
+
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environment
+airline_sentiment_env/
+
+# OS files
+.DS_Store
+
+# Sensitive information
+*.env
+
+# Intermediate data files
+twitter_airlines_sentiment_processed.csv
